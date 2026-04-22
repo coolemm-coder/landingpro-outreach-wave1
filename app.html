@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Превью от LandingPro</title>
+  <meta name="description" content="Концепт-превью сайта. Подготовлено командой landingpro.by.">
+  <meta name="robots" content="noindex,nofollow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root { --accent: #c9a961; --bg: #0f0f0f; --text: #f5f0e6; --text-dim: #9a9a9a; --panel: #1a1a1a; --border: rgba(255,255,255,0.08); }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; overflow-x: hidden; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
+    .preview-banner { position: sticky; top: 0; z-index: 100; background: linear-gradient(90deg, var(--accent), #000); color: #fff; padding: 0.6rem 1rem; text-align: center; font-size: 0.85rem; border-bottom: 1px solid rgba(255,255,255,0.1); }
+    .preview-banner strong { color: #fff; }
+    .preview-banner a { color: #fff; text-decoration: underline; }
+    .hero { min-height: 85vh; display: flex; flex-direction: column; justify-content: center; padding: 6rem 0 4rem; position: relative; background: radial-gradient(circle at top right, rgba(201,169,97,0.08), transparent 60%), var(--bg); }
+    .hero .tag { display: inline-block; color: var(--accent); font-size: 0.85rem; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 1.5rem; font-weight: 600; }
+    .hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(2.5rem, 6vw, 5rem); line-height: 1.05; font-weight: 900; margin-bottom: 1.5rem; letter-spacing: -0.02em; }
+    .hero h1 span { color: var(--accent); font-style: italic; }
+    .hero p.lead { font-size: clamp(1.05rem, 1.5vw, 1.25rem); color: var(--text-dim); max-width: 620px; margin-bottom: 2.5rem; }
+    .hero-cta { display: flex; flex-wrap: wrap; gap: 1rem; }
+    .btn { display: inline-flex; align-items: center; gap: 0.5rem; padding: 1.1rem 2.3rem; border-radius: 4px; font-weight: 600; text-decoration: none; transition: transform 0.15s, box-shadow 0.2s, background 0.2s; font-size: 1rem; }
+    .btn-primary { background: var(--accent); color: #0f0f0f; box-shadow: 0 8px 24px rgba(0,0,0,0.25); }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 28px rgba(0,0,0,0.35); }
+    .btn-ghost { background: transparent; color: var(--text); border: 1px solid var(--border); }
+    .btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
+    .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; margin-top: 4rem; padding-top: 2rem; border-top: 1px solid var(--border); }
+    .stats .stat-num { font-family: 'Playfair Display', serif; font-size: 2.2rem; color: var(--accent); font-weight: 900; line-height: 1; }
+    .stats .stat-label { font-size: 0.8rem; color: var(--text-dim); text-transform: uppercase; letter-spacing: 2px; margin-top: 0.4rem; }
+    section { padding: 5rem 0; }
+    section h2 { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 900; margin-bottom: 1rem; letter-spacing: -0.02em; }
+    section h2 .accent { color: var(--accent); }
+    section .section-lead { font-size: 1.1rem; color: var(--text-dim); max-width: 640px; margin-bottom: 3rem; }
+    .services { background: var(--panel); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+    .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; }
+    .service-card { background: var(--bg); padding: 2rem 1.8rem; border: 1px solid var(--border); border-radius: 6px; transition: border-color 0.2s, transform 0.2s; }
+    .service-card:hover { border-color: var(--accent); transform: translateY(-3px); }
+    .service-card h3 { font-family: 'Playfair Display', serif; font-size: 1.3rem; margin-bottom: 0.5rem; }
+    .service-card .price { color: var(--accent); font-weight: 700; font-size: 1.1rem; }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; }
+    .contact-info { display: flex; flex-direction: column; gap: 1.2rem; }
+    .contact-info .row { display: flex; gap: 1rem; align-items: flex-start; padding: 1rem 0; border-bottom: 1px solid var(--border); }
+    .contact-info .row .label { min-width: 100px; color: var(--text-dim); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; }
+    .contact-info .row .value a { color: var(--text); text-decoration: none; font-weight: 500; }
+    .contact-info .row .value a:hover { color: var(--accent); }
+    .pitch { background: linear-gradient(135deg, var(--accent) 0%, #000 100%); color: #fff; padding: 3rem 2.5rem; border-radius: 6px; position: relative; overflow: hidden; }
+    .pitch::before { content: ""; position: absolute; top: -50px; right: -50px; width: 200px; height: 200px; background: rgba(255,255,255,0.05); border-radius: 50%; }
+    .pitch .small-label { text-transform: uppercase; letter-spacing: 2px; font-size: 0.75rem; color: rgba(255,255,255,0.75); margin-bottom: 0.8rem; }
+    .pitch h3 { font-family: 'Playfair Display', serif; font-size: 1.6rem; margin-bottom: 1rem; color: #fff; }
+    .pitch p { margin-bottom: 1rem; color: rgba(255,255,255,0.95); }
+    .pitch .offer-box { background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.25); padding: 1.2rem 1.3rem; border-radius: 6px; margin: 1.2rem 0; backdrop-filter: blur(10px); }
+    .pitch .offer-box .label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 2px; color: #fff; opacity: 0.8; }
+    .pitch .offer-box .text { margin-top: 0.3rem; color: #fff; font-weight: 500; }
+    .pitch .cta-button { display: inline-block; background: #fff; color: #0f0f0f; padding: 1rem 2rem; border-radius: 4px; text-decoration: none; font-weight: 700; margin-top: 0.5rem; }
+    footer { background: var(--panel); padding: 3rem 0 2rem; border-top: 1px solid var(--border); text-align: center; }
+    footer .brand-name { font-family: 'Playfair Display', serif; font-size: 1.8rem; color: var(--accent); font-weight: 900; margin-bottom: 0.5rem; }
+    footer p { color: var(--text-dim); font-size: 0.9rem; }
+    footer .lp-credit { margin-top: 2rem; padding-top: 1.5rem; border-top: 1px dashed var(--border); font-size: 0.8rem; }
+    footer .lp-credit a { color: var(--accent); text-decoration: none; }
+    body.light { --text: #1a1a1a; --text-dim: #555; --panel: #f5f0e6; --border: rgba(0,0,0,0.12); }
+    body.light .preview-banner { border-bottom: 1px solid rgba(0,0,0,0.08); }
+    body.light .contact-info .row .value a { color: var(--text); }
+    body.light footer p, body.light .contact-info .row .label { color: var(--text-dim); }
+    @media (max-width: 768px) { .stats { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; } .contact-grid { grid-template-columns: 1fr; gap: 2rem; } section { padding: 3.5rem 0; } .hero { min-height: auto; padding: 4rem 0 3rem; } }
+    .loading { min-height: 100vh; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; color: var(--text-dim); }
+    .error { min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 2rem; text-align: center; }
+    .error h1 { font-family: 'Playfair Display', serif; margin-bottom: 1rem; }
+    .error a { color: var(--accent); }
+  </style>
+</head>
+<body>
+<div id="root" class="loading">Загрузка…</div>
+<script>
+(async function(){
+  const root = document.getElementById('root');
+  let slug = new URLSearchParams(location.search).get('slug');
+  if (!slug) {
+    const m = location.pathname.match(/\/mockups\/([^\/]+)/);
+    if (m) slug = m[1];
+  }
+  if (!slug) {
+    root.outerHTML = '<div class="error"><h1>Slug not specified</h1><p>Use <code>?slug=brock</code> or path <code>/mockups/brock</code></p><a href="/">← Back to index</a></div>';
+    return;
+  }
+  try {
+    const res = await fetch('/candidates.json');
+    const all = await res.json();
+    const c = all.find(x => x.slug === slug);
+    if (!c) {
+      root.outerHTML = '<div class="error"><h1>Mockup «'+slug+'» не найден</h1><a href="/">← Back to index</a></div>';
+      return;
+    }
+    render(c);
+  } catch(e) {
+    root.outerHTML = '<div class="error"><h1>Ошибка загрузки</h1><p>'+e.message+'</p></div>';
+  }
+
+  function esc(s){ return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
+
+  function render(c) {
+    const bgDark = c.bg_dark !== false;
+    document.body.className = bgDark ? '' : 'light';
+    const r = document.documentElement.style;
+    r.setProperty('--accent', c.accent);
+    r.setProperty('--bg', c.bg);
+    if (!bgDark) {
+      r.setProperty('--text', '#1a1a1a');
+      r.setProperty('--text-dim', '#555');
+      r.setProperty('--panel', '#f5f0e6');
+      r.setProperty('--border', 'rgba(0,0,0,0.12)');
+    }
+
+    document.title = c.brand + ' — ' + c.tagline + ' | Превью от LandingPro';
+    const typeLabel = c.type === 'barber' ? 'БАРБЕРШОП' : 'САЛОН КРАСОТЫ';
+    const phoneRaw = c.phone.replace(/[^\d+]/g,'');
+    const siteDisplay = c.site.replace(/^https?:\/\//,'').replace(/\/$/,'');
+    const subject = encodeURIComponent(c.brand + ' — интересует предложение LandingPro');
+
+    const servicesHtml = c.services.map(s => `
+      <div class="service-card">
+        <h3>${esc(s.name)}</h3>
+        <div class="price">${esc(s.price)}</div>
+      </div>`).join('');
+
+    root.outerHTML = `
+<div class="preview-banner">
+  📐 <strong>Концепт-превью</strong> от <a href="https://landingpro.by">LandingPro</a> — так может выглядеть ваш сайт. Готов за 30 минут вручную.
+</div>
+
+<section class="hero">
+  <div class="container">
+    <span class="tag">${esc(typeLabel)} · МИНСК</span>
+    <h1>${esc(c.brand)}<br><span>${esc(c.tagline)}</span></h1>
+    <p class="lead">Премиальный опыт для тех, кто знает цену деталям. Запись в один клик, прозрачные цены, мастера с репутацией.</p>
+    <div class="hero-cta">
+      <a href="#services" class="btn btn-primary">Записаться →</a>
+      <a href="#contact" class="btn btn-ghost">Контакты</a>
+    </div>
+    <div class="stats">
+      <div><div class="stat-num">5+</div><div class="stat-label">лет опыта</div></div>
+      <div><div class="stat-num">10K+</div><div class="stat-label">клиентов</div></div>
+      <div><div class="stat-num">4.9★</div><div class="stat-label">рейтинг</div></div>
+      <div><div class="stat-num">24/7</div><div class="stat-label">онлайн-запись</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="services" id="services">
+  <div class="container">
+    <h2>Наши <span class="accent">услуги</span></h2>
+    <p class="section-lead">Прозрачные цены. Без скрытых доплат. Запись онлайн — быстро и удобно.</p>
+    <div class="services-grid">${servicesHtml}</div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="container">
+    <div class="contact-grid">
+      <div>
+        <h2>Где мы <span class="accent">находимся</span></h2>
+        <p class="section-lead">Ждём вас в удобное время. Запись онлайн или по телефону.</p>
+        <div class="contact-info">
+          <div class="row"><div class="label">Адрес</div><div class="value">${esc(c.address)}</div></div>
+          <div class="row"><div class="label">Телефон</div><div class="value"><a href="tel:${esc(phoneRaw)}">${esc(c.phone)}</a></div></div>
+          <div class="row"><div class="label">Instagram</div><div class="value"><a href="https://instagram.com/${esc(c.ig)}" target="_blank">@${esc(c.ig)}</a></div></div>
+          <div class="row"><div class="label">Email</div><div class="value"><a href="mailto:${esc(c.email)}">${esc(c.email)}</a></div></div>
+          <div class="row"><div class="label">Сайт</div><div class="value"><a href="${esc(c.site)}" target="_blank">${esc(siteDisplay)}</a></div></div>
+        </div>
+      </div>
+      <div class="pitch">
+        <div class="small-label">От LandingPro → для ${esc(c.brand)}</div>
+        <h3>Что увидел при аудите вашего присутствия</h3>
+        <p>${esc(c.pain)}</p>
+        <div class="offer-box">
+          <div class="label">Наше предложение</div>
+          <div class="text">${esc(c.offer)}</div>
+        </div>
+        <p style="font-size: 0.9rem;">Этот сайт — <strong>реальный концепт</strong>, сделан за 30 минут для вас. Полная версия с анимациями, интеграциями и CRM — за 2–3 недели.</p>
+        <a href="mailto:info@landingpro.by?subject=${subject}" class="cta-button">Обсудить проект →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="brand-name">${esc(c.brand)}</div>
+    <p>${esc(c.address)}</p>
+    <p style="margin-top: 0.3rem;"><a href="tel:${esc(phoneRaw)}" style="color: var(--text); text-decoration: none;">${esc(c.phone)}</a></p>
+    <div class="lp-credit">
+      Концепт-превью сайта. Сделано командой <a href="https://landingpro.by">LandingPro</a> · УНП 193582943 ·<br>
+      <em>Хотите такой же, но настоящий? <a href="mailto:info@landingpro.by">info@landingpro.by</a></em>
+    </div>
+  </div>
+</footer>`;
+  }
+})();
+</script>
+</body>
+</html>
