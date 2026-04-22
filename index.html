@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LandingPro Outreach — Волна 1</title>
+<meta name="robots" content="noindex,nofollow">
+<style>
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #0f0f0f; color: #f0f0f0; margin: 0; padding: 2rem; }
+  h1 { font-size: 2.5rem; margin-bottom: 0.5rem; }
+  .lead { color: #999; margin-bottom: 2rem; max-width: 800px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.2rem; max-width: 1400px; }
+  .card { display: block; background: #1a1a1a; padding: 1.8rem; border-radius: 8px; text-decoration: none; color: #f0f0f0; border: 1px solid rgba(255,255,255,0.08); transition: transform 0.2s, border-color 0.2s; }
+  .card:hover { transform: translateY(-3px); border-color: #c9a961; }
+  .card .tag { font-size: 0.7rem; color: #c9a961; letter-spacing: 2px; margin-bottom: 0.8rem; }
+  .card h3 { font-size: 1.4rem; margin-bottom: 0.3rem; }
+  .card .tagline { color: #bbb; font-size: 0.95rem; margin-bottom: 1rem; }
+  .card .pain { color: #999; font-size: 0.85rem; line-height: 1.5; margin-bottom: 1rem; }
+  .card .cta { color: #c9a961; font-weight: 600; }
+  .loading { color: #777; }
+</style>
+</head>
+<body>
+<h1>LandingPro Outreach — Волна 1</h1>
+<p class="lead">15 концепт-превью для барберов и салонов Минска. Каждая карточка — кастомный mockup, сделанный под конкретного клиента.</p>
+<div class="grid" id="grid"><div class="loading">Загрузка карточек…</div></div>
+<script>
+(async function(){
+  try {
+    const res = await fetch('/candidates.json');
+    const data = await res.json();
+    const grid = document.getElementById('grid');
+    grid.innerHTML = data.map(c => `
+      <a class="card" href="/mockups/${c.slug}" target="_blank">
+        <div class="tag">${c.type === 'barber' ? 'BARBER' : 'SALON'}</div>
+        <h3>${c.brand}</h3>
+        <p class="tagline">${c.tagline}</p>
+        <p class="pain"><strong>Pain:</strong> ${c.pain.slice(0, 130)}${c.pain.length > 130 ? '…' : ''}</p>
+        <span class="cta">Смотреть mockup →</span>
+      </a>`).join('');
+  } catch(e) {
+    document.getElementById('grid').innerHTML = '<p>Ошибка загрузки: '+e.message+'</p>';
+  }
+})();
+</script>
+</body>
+</html>
