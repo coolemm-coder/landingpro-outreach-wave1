@@ -2,7 +2,7 @@
   "cleanUrls": true,
   "trailingSlash": false,
   "rewrites": [
-    { "source": "/mockups/:slug", "destination": "/app.html?slug=:slug" }
+    { "source": "/mockups/:slug", "destination": "/app?slug=:slug" }
   ],
   "headers": [
     {
