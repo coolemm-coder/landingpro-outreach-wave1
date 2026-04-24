@@ -1,8 +1,10 @@
 {
-  "cleanUrls": true,
   "trailingSlash": false,
   "rewrites": [
-    { "source": "/mockups/:slug", "destination": "/app?slug=:slug" }
+    { "source": "/mockups/esquire", "destination": "/mockups/esquire.html" },
+    { "source": "/mockups/now", "destination": "/mockups/now.html" },
+    { "source": "/mockups/beauty-family", "destination": "/mockups/beauty-family.html" },
+    { "source": "/mockups/:slug", "destination": "/app.html?slug=:slug" }
   ],
   "headers": [
     {
