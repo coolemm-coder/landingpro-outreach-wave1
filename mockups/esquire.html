@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow">
+<title>Esquire — Мужской салон · пр. Победителей 108 · Минск</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0f172a;
+    --bg-alt: #1e293b;
+    --surface: #1e2537;
+    --gold: #b45309;
+    --gold-light: #d4a04c;
+    --text: #e2e8f0;
+    --text-dim: rgba(226, 232, 240, 0.65);
+    --text-mute: rgba(226, 232, 240, 0.4);
+    --border: rgba(226, 232, 240, 0.1);
+    --font-serif: 'Playfair Display', Georgia, serif;
+    --font-sans: 'Inter', -apple-system, sans-serif;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: var(--font-sans);
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    font-weight: 400;
+    overflow-x: hidden;
+  }
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.15'/%3E%3C/svg%3E");
+    opacity: 0.5;
+    mix-blend-mode: overlay;
+    z-index: 1;
+  }
+  .content { position: relative; z-index: 2; }
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+
+  .preview-banner {
+    background: linear-gradient(90deg, var(--gold) 0%, var(--gold-light) 100%);
+    color: #0f172a;
+    text-align: center;
+    padding: 0.75rem 1rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+  }
+  .preview-banner a { color: #0f172a; text-decoration: underline; font-weight: 700; }
+
+  nav { padding: 2rem 0; border-bottom: 1px solid var(--border); }
+  nav .row { display: flex; justify-content: space-between; align-items: center; }
+  .logo { font-family: var(--font-serif); font-weight: 700; font-size: 1.6rem; letter-spacing: 0.08em; }
+  .nav-links { display: flex; gap: 2.5rem; list-style: none; font-size: 0.9rem; font-weight: 500; color: var(--text-dim); }
+  .nav-links a { color: inherit; text-decoration: none; transition: color 0.2s; }
+  .nav-links a:hover { color: var(--gold-light); }
+  @media (max-width: 680px) { .nav-links { display: none; } }
+
+  .hero { padding: 8rem 0 6rem; position: relative; }
+  .hero .label { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.25em; color: var(--gold-light); text-transform: uppercase; margin-bottom: 2rem; display: block; }
+  .hero h1 { font-family: var(--font-serif); font-size: clamp(3rem, 9vw, 7rem); font-weight: 400; line-height: 0.95; letter-spacing: -0.02em; margin-bottom: 2rem; max-width: 900px; }
+  .hero h1 em { font-style: italic; color: var(--gold-light); font-weight: 400; }
+  .hero-desc { font-size: 1.2rem; color: var(--text-dim); max-width: 560px; margin-bottom: 3rem; line-height: 1.7; }
+  .cta-group { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .btn { padding: 1rem 2.25rem; border-radius: 2px; font-weight: 500; font-size: 0.95rem; letter-spacing: 0.05em; text-decoration: none; text-transform: uppercase; transition: all 0.25s; display: inline-block; cursor: pointer; border: none; }
+  .btn-primary { background: var(--gold); color: white; }
+  .btn-primary:hover { background: var(--gold-light); }
+  .btn-ghost { background: transparent; color: var(--text); border: 1px solid var(--border); }
+  .btn-ghost:hover { border-color: var(--gold-light); color: var(--gold-light); }
+
+  .hero-meta { display: flex; gap: 3rem; margin-top: 5rem; padding-top: 3rem; border-top: 1px solid var(--border); flex-wrap: wrap; }
+  .meta-item { flex: 1; min-width: 140px; }
+  .meta-val { font-family: var(--font-serif); font-size: 2.5rem; font-weight: 600; color: var(--text); line-height: 1; }
+  .meta-label { font-size: 0.75rem; color: var(--text-mute); letter-spacing: 0.15em; text-transform: uppercase; margin-top: 0.6rem; }
+
+  section.block { padding: 6rem 0; border-top: 1px solid var(--border); }
+  .section-label { font-size: 0.7rem; font-weight: 600; color: var(--gold-light); letter-spacing: 0.25em; text-transform: uppercase; margin-bottom: 1.5rem; }
+  .section-h { font-family: var(--font-serif); font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 500; line-height: 1.1; letter-spacing: -0.01em; margin-bottom: 1.5rem; max-width: 750px; }
+
+  .menu { margin-top: 3rem; max-width: 760px; }
+  .menu-item { display: flex; align-items: baseline; gap: 1rem; padding: 1.5rem 0; border-bottom: 1px dashed var(--border); }
+  .menu-item:last-child { border-bottom: none; }
+  .menu-name { font-family: var(--font-serif); font-size: 1.4rem; font-weight: 500; color: var(--text); }
+  .menu-dots { flex: 1; border-bottom: 1px dotted var(--text-mute); margin-bottom: 0.35rem; }
+  .menu-price { font-family: var(--font-serif); font-size: 1.3rem; font-weight: 600; color: var(--gold-light); white-space: nowrap; }
+  .menu-desc { font-size: 0.85rem; color: var(--text-mute); margin-top: 0.35rem; }
+
+  .masters { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; margin-top: 3rem; }
+  @media (max-width: 900px) { .masters { grid-template-columns: repeat(2, 1fr); } }
+  .master { padding: 2rem 1.5rem; border: 1px solid var(--border); border-radius: 2px; transition: border-color 0.25s; }
+  .master:hover { border-color: var(--gold); }
+  .master-avatar { width: 80px; height: 80px; border-radius: 50%; background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%); display: flex; align-items: center; justify-content: center; font-family: var(--font-serif); font-size: 1.8rem; color: white; margin-bottom: 1.25rem; }
+  .master-name { font-family: var(--font-serif); font-size: 1.2rem; margin-bottom: 0.35rem; }
+  .master-exp { font-size: 0.82rem; color: var(--text-mute); letter-spacing: 0.05em; }
+
+  .faq { max-width: 800px; margin: 3rem auto 0; }
+  .faq-item { border-bottom: 1px solid var(--border); padding: 1.5rem 0; }
+  .faq-q { font-family: var(--font-serif); font-size: 1.3rem; margin-bottom: 0.75rem; cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
+  .faq-q::after { content: '+'; color: var(--gold-light); font-size: 1.6rem; font-family: var(--font-sans); font-weight: 300; }
+  .faq-a { color: var(--text-dim); line-height: 1.7; max-width: 700px; }
+
+  .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; margin-top: 3rem; }
+  @media (max-width: 680px) { .contact-grid { grid-template-columns: 1fr; } }
+  .contact-info { font-size: 1.1rem; color: var(--text-dim); line-height: 2; }
+  .contact-info strong { color: var(--text); font-weight: 500; }
+  .contact-map { background: var(--surface); border: 1px solid var(--border); border-radius: 2px; aspect-ratio: 4/3; display: flex; align-items: center; justify-content: center; color: var(--text-mute); font-size: 0.85rem; background-image: linear-gradient(0deg, var(--border) 1px, transparent 1px), linear-gradient(90deg, var(--border) 1px, transparent 1px); background-size: 30px 30px; }
+
+  .lp-block { background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%); color: #0f172a; padding: 5rem 0; text-align: center; }
+  .lp-block h3 { font-family: var(--font-serif); font-size: clamp(1.8rem, 4vw, 2.5rem); font-weight: 600; max-width: 700px; margin: 0 auto 1.5rem; line-height: 1.2; }
+  .lp-block p { max-width: 600px; margin: 0 auto 2.5rem; font-size: 1.05rem; }
+  .lp-block .btn-primary { background: #0f172a; color: white; }
+  .lp-block .btn-primary:hover { background: #1e293b; }
+
+  footer { padding: 2rem 0; font-size: 0.8rem; color: var(--text-mute); text-align: center; border-top: 1px solid var(--border); }
+  footer a { color: var(--gold-light); }
+</style>
+</head>
+<body>
+<div class="content">
+
+<div class="preview-banner">
+  Концепт-превью от <a href="https://landingpro.by">LandingPro</a> — так может выглядеть сайт Esquire в 2026
+</div>
+
+<nav><div class="container"><div class="row">
+  <div class="logo">E S Q U I R E</div>
+  <ul class="nav-links">
+    <li><a href="#services">Услуги</a></li>
+    <li><a href="#masters">Мастера</a></li>
+    <li><a href="#contact">Найти нас</a></li>
+    <li><a href="#contact">+375 29 631-07-07</a></li>
+  </ul>
+</div></div></nav>
+
+<header class="hero"><div class="container">
+  <span class="label">Барбершоп · Минск · с 2015</span>
+  <h1>Не стрижка, <em>а ритуал.</em><br>Для тех, кто знает разницу.</h1>
+  <p class="hero-desc">Esquire на пр. Победителей — мужской салон, где каждая стрижка длится 60 минут, а кофе подают на фарфоре. Восемь мастеров с опытом 8+ лет. Запись через YClients, 7 дней в неделю.</p>
+  <div class="cta-group">
+    <a href="#services" class="btn btn-primary">Записаться на стрижку</a>
+    <a href="#masters" class="btn btn-ghost">Посмотреть мастеров</a>
+  </div>
+  <div class="hero-meta">
+    <div class="meta-item"><div class="meta-val">10</div><div class="meta-label">Лет на пр. Победителей</div></div>
+    <div class="meta-item"><div class="meta-val">60 мин</div><div class="meta-label">Длительность услуги</div></div>
+    <div class="meta-item"><div class="meta-val">4.9★</div><div class="meta-label">Google · 180+ отзывов</div></div>
+    <div class="meta-item"><div class="meta-val">8</div><div class="meta-label">Мастеров в команде</div></div>
+  </div>
+</div></header>
+
+<section class="block" id="services"><div class="container">
+  <div class="section-label">Прайс-лист</div>
+  <h2 class="section-h">Что входит в стрижку Esquire — и почему это стоит 70 BYN.</h2>
+  <p style="color: var(--text-dim); max-width: 600px; font-size: 1.05rem;">У нас не «стрижка за 30 минут». У нас — консультация, мытьё головы, стрижка, бритьё шеи, укладка и виски для идеального силуэта.</p>
+  <div class="menu">
+    <div class="menu-item"><div><div class="menu-name">Стрижка «Esquire»</div><div class="menu-desc">60 минут, консультация, мытьё, укладка, бритьё шеи</div></div><div class="menu-dots"></div><div class="menu-price">70 BYN</div></div>
+    <div class="menu-item"><div><div class="menu-name">Моделирование бороды</div><div class="menu-desc">Контур, стрижка, уход маслом</div></div><div class="menu-dots"></div><div class="menu-price">40 BYN</div></div>
+    <div class="menu-item"><div><div class="menu-name">Королевское бритьё + уход</div><div class="menu-desc">Опасная бритва, горячий компресс, массаж лица</div></div><div class="menu-dots"></div><div class="menu-price">60 BYN</div></div>
+    <div class="menu-item"><div><div class="menu-name">VIP-комплекс</div><div class="menu-desc">Стрижка + борода + бритьё + маска для волос</div></div><div class="menu-dots"></div><div class="menu-price">140 BYN</div></div>
+  </div>
+</div></section>
+
+<section class="block" id="masters"><div class="container">
+  <div class="section-label">Мастера</div>
+  <h2 class="section-h">Восемь рук, которые понимают текстуру волос без слов.</h2>
+  <div class="masters">
+    <div class="master"><div class="master-avatar">АК</div><div class="master-name">Антон</div><div class="master-exp">Art Director · 12 лет · стрижка, борода</div></div>
+    <div class="master"><div class="master-avatar">ДМ</div><div class="master-name">Дмитрий</div><div class="master-exp">Senior · 9 лет · опасное бритьё</div></div>
+    <div class="master"><div class="master-avatar">ВС</div><div class="master-name">Виталий</div><div class="master-exp">Senior · 8 лет · fade, текстурные</div></div>
+    <div class="master"><div class="master-avatar">ПН</div><div class="master-name">Павел</div><div class="master-exp">Senior · 7 лет · классика, укладка</div></div>
+  </div>
+</div></section>
+
+<section class="block"><div class="container">
+  <div class="section-label">Частые вопросы</div>
+  <h2 class="section-h">Что спрашивают те, кто записывается впервые.</h2>
+  <div class="faq">
+    <div class="faq-item"><div class="faq-q">Можно без предварительной записи?</div><div class="faq-a">Можно, но шанс ~30%. Пик с 18:00 до 21:00 и в субботу — всё расписано на неделю вперёд. Лучше записаться через YClients: 2 клика, занимает 10 секунд.</div></div>
+    <div class="faq-item"><div class="faq-q">Есть парковка рядом?</div><div class="faq-a">Да, у самого входа — 8 мест бесплатно для клиентов. После 19:00 — паркинг ТЦ «Галерея» напротив, бесплатно по чеку.</div></div>
+    <div class="faq-item"><div class="faq-q">Как оплатить картой рассрочки?</div><div class="faq-a">Принимаем Халва, Магнит, Smart Card. Также Visa / Mastercard / МИР и Belqi. Безналичный расчёт — по договору.</div></div>
+  </div>
+</div></section>
+
+<section class="block" id="contact"><div class="container">
+  <div class="section-label">Найти нас</div>
+  <h2 class="section-h">Пр. Победителей 108 · 5 минут пешком от м. «Кунцевщина».</h2>
+  <div class="contact-grid">
+    <div class="contact-info">
+      <p><strong>Адрес</strong><br>Минск, пр. Победителей 108, 1 этаж (вход со двора)</p>
+      <p><strong>Часы работы</strong><br>Пн–Пт: 10:00–22:00 · Сб–Вс: 10:00–20:00</p>
+      <p><strong>Телефон</strong><br>+375 29 631-07-07</p>
+      <p><strong>Instagram</strong><br>@esquire.minsk</p>
+      <p><strong>Онлайн-запись</strong><br>через YClients — <a href="#" style="color:var(--gold-light);">esquire.by/booking</a></p>
+    </div>
+    <div class="contact-map">[ Карта · Yandex Maps integration ]</div>
+  </div>
+</div></section>
+
+<section class="lp-block"><div class="container">
+  <h3>Этот концепт вашего сайта сделан за 30 минут. Хотите такой — на ваш домен?</h3>
+  <p>LandingPro — AI-студия лендингов в Минске. Запуск за 2–3 недели. Интеграция с YClients, Instagram, Telegram. Собственный код, без vendor lock-in.</p>
+  <a href="mailto:info@landingpro.by?subject=Интересно: лендинг для Esquire" class="btn btn-primary">Написать на info@landingpro.by</a>
+</div></section>
+
+<footer><div class="container">
+  Это концепт-превью, созданный LandingPro для Esquire. Не является официальной страницей. Реальный Esquire: <a href="https://esquire.by">esquire.by</a>
+</div></footer>
+
+</div>
+</body>
+</html>
