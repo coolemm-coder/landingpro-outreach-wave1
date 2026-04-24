@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow">
+<title>Beauty Family — Семейный салон красоты · ул. Тимошенко 20/1 · Минск</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --pink: #be185d;
+    --pink-dark: #831843;
+    --pink-soft: #fce7f3;
+    --pink-bg: #fdf2f8;
+    --amber: #d97706;
+    --amber-soft: #fef3c7;
+    --heading: #1c1917;
+    --text: #44403c;
+    --muted: #8b7f7a;
+    --border: #f5e6e0;
+    --font-serif: 'Cormorant Garamond', Georgia, serif;
+    --font-sans: 'Inter', -apple-system, sans-serif;
+    --radius: 16px;
+    --radius-lg: 28px;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: var(--font-sans); background: var(--pink-bg); color: var(--text); line-height: 1.6; }
+  .container { max-width: 1240px; margin: 0 auto; padding: 0 1.5rem; }
+
+  .preview-banner { background: var(--pink); color: white; padding: 0.75rem 1rem; text-align: center; font-size: 0.88rem; font-weight: 500; }
+  .preview-banner a { color: white; text-decoration: underline; }
+
+  nav { padding: 1.5rem 0; }
+  .row { display: flex; justify-content: space-between; align-items: center; gap: 2rem; }
+  .logo { font-family: var(--font-serif); font-size: 1.8rem; font-weight: 600; color: var(--pink); font-style: italic; letter-spacing: -0.01em; }
+  .logo::before { content: '❀ '; color: var(--amber); font-style: normal; }
+  .nav-links { display: flex; gap: 2rem; list-style: none; font-size: 0.95rem; }
+  .nav-links a { color: var(--text); text-decoration: none; transition: color 0.2s; }
+  .nav-links a:hover { color: var(--pink); }
+  .nav-btn { background: var(--pink); color: white !important; padding: 0.7rem 1.5rem; border-radius: 100px; text-decoration: none; font-weight: 500; font-size: 0.9rem; }
+  .nav-btn:hover { background: var(--pink-dark); }
+  @media (max-width: 780px) { .nav-links li:not(.mobile-keep) { display: none; } }
+
+  .hero { text-align: center; padding: 4rem 0 6rem; position: relative; overflow: hidden; }
+  .hero::before { content: ''; position: absolute; top: -100px; left: -100px; width: 400px; height: 400px; background: radial-gradient(circle, var(--pink-soft) 0%, transparent 60%); opacity: 0.8; z-index: 0; }
+  .hero::after { content: ''; position: absolute; bottom: -80px; right: -100px; width: 360px; height: 360px; background: radial-gradient(circle, var(--amber-soft) 0%, transparent 60%); opacity: 0.7; z-index: 0; }
+  .hero > * { position: relative; z-index: 1; }
+  .hero-tag { display: inline-block; background: white; color: var(--pink); padding: 0.5rem 1.25rem; border-radius: 100px; font-size: 0.82rem; font-weight: 500; margin-bottom: 2rem; border: 1px solid var(--border); }
+  .hero h1 { font-family: var(--font-serif); font-size: clamp(2.8rem, 7vw, 5.5rem); font-weight: 400; line-height: 1.05; color: var(--heading); margin-bottom: 1.5rem; max-width: 900px; margin-left: auto; margin-right: auto; }
+  .hero h1 em { font-style: italic; color: var(--pink); font-weight: 500; }
+  .hero-sub { font-size: 1.15rem; color: var(--text); max-width: 620px; margin: 0 auto 2.5rem; }
+  .cta-group { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+  .btn { padding: 1rem 2rem; border-radius: 100px; font-weight: 500; font-size: 1rem; text-decoration: none; border: none; cursor: pointer; font-family: inherit; transition: all 0.2s; display: inline-block; }
+  .btn-primary { background: var(--pink); color: white; }
+  .btn-primary:hover { background: var(--pink-dark); transform: translateY(-1px); }
+  .btn-soft { background: white; color: var(--pink); border: 1px solid var(--border); }
+  .btn-soft:hover { border-color: var(--pink); }
+
+  section.block { padding: 4rem 0; }
+  h2 { font-family: var(--font-serif); font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 500; line-height: 1.1; color: var(--heading); margin-bottom: 1rem; max-width: 800px; }
+  h2 em { font-style: italic; color: var(--pink); }
+  .section-intro { max-width: 580px; color: var(--text); margin-bottom: 3rem; font-size: 1.05rem; }
+
+  .bento { display: grid; grid-template-columns: repeat(4, 1fr); grid-auto-rows: 200px; gap: 1rem; }
+  @media (max-width: 900px) { .bento { grid-template-columns: repeat(2, 1fr); } }
+  .b-card { background: white; border-radius: var(--radius-lg); padding: 1.75rem; display: flex; flex-direction: column; justify-content: space-between; transition: all 0.25s; border: 1px solid var(--border); overflow: hidden; position: relative; }
+  .b-card:hover { transform: translateY(-4px); box-shadow: 0 20px 40px rgba(190, 24, 93, 0.1); border-color: var(--pink-soft); }
+  .b-big { grid-column: span 2; grid-row: span 2; background: linear-gradient(135deg, var(--pink) 0%, var(--pink-dark) 100%); color: white; border: none; }
+  .b-big .b-service, .b-big .b-desc, .b-big .b-price { color: white; }
+  .b-wide { grid-column: span 2; }
+  .b-amber { background: linear-gradient(135deg, var(--amber-soft) 0%, white 100%); border-color: var(--amber-soft); }
+  .b-service { font-family: var(--font-serif); font-size: 1.8rem; font-weight: 500; color: var(--heading); margin-bottom: 0.5rem; line-height: 1.1; }
+  .b-big .b-service { font-size: 2.5rem; }
+  .b-desc { font-size: 0.9rem; color: var(--muted); }
+  .b-big .b-desc { color: rgba(255, 255, 255, 0.85); font-size: 1rem; }
+  .b-price { font-family: var(--font-serif); font-size: 1.6rem; font-weight: 600; color: var(--pink); }
+  .b-price small { font-size: 0.75rem; color: var(--muted); font-family: var(--font-sans); letter-spacing: 0.05em; text-transform: uppercase; margin-right: 0.3rem; }
+  .b-big .b-price small { color: rgba(255, 255, 255, 0.7); }
+
+  .family { background: white; border-radius: var(--radius-lg); padding: 4rem 3rem; margin-top: 3rem; display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; }
+  @media (max-width: 780px) { .family { grid-template-columns: 1fr; padding: 2.5rem 1.5rem; } }
+  .family h3 { font-family: var(--font-serif); font-size: clamp(1.8rem, 4vw, 2.5rem); line-height: 1.1; color: var(--heading); margin-bottom: 1.25rem; }
+  .family h3 em { font-style: italic; color: var(--pink); }
+  .family-list { list-style: none; margin-top: 1.5rem; }
+  .family-list li { padding: 1rem 0; border-bottom: 1px solid var(--border); display: flex; gap: 1rem; align-items: center; }
+  .family-list li:last-child { border: none; }
+  .family-icon { width: 44px; height: 44px; background: var(--pink-soft); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 1.3rem; }
+  .family-list strong { color: var(--heading); display: block; margin-bottom: 0.15rem; }
+  .family-list span { font-size: 0.88rem; color: var(--muted); }
+  .family-img { aspect-ratio: 1; background: linear-gradient(135deg, var(--pink-soft) 0%, var(--amber-soft) 100%); border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center; font-family: var(--font-serif); font-size: 5rem; color: var(--pink); font-style: italic; }
+
+  .masters { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.25rem; margin-top: 2.5rem; }
+  @media (max-width: 900px) { .masters { grid-template-columns: repeat(2, 1fr); } }
+  .master { background: white; border-radius: var(--radius); padding: 1.75rem 1.25rem; text-align: center; border: 1px solid var(--border); }
+  .master-img { width: 70px; height: 70px; border-radius: 50%; background: linear-gradient(135deg, var(--pink-soft), var(--amber-soft)); margin: 0 auto 1rem; display: flex; align-items: center; justify-content: center; font-family: var(--font-serif); font-size: 1.6rem; color: var(--pink); font-style: italic; }
+  .master-name { font-family: var(--font-serif); font-size: 1.25rem; color: var(--heading); margin-bottom: 0.3rem; }
+  .master-role { font-size: 0.82rem; color: var(--muted); }
+
+  .contact { background: var(--heading); color: white; border-radius: var(--radius-lg); padding: 4rem 3rem; margin-top: 3rem; }
+  .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; }
+  @media (max-width: 780px) { .contact-grid { grid-template-columns: 1fr; } }
+  .contact h3 { font-family: var(--font-serif); font-size: clamp(1.8rem, 4vw, 2.5rem); margin-bottom: 1rem; line-height: 1.1; }
+  .contact h3 em { font-style: italic; color: var(--pink-soft); }
+  .contact-info { color: rgba(255, 255, 255, 0.8); line-height: 2; }
+  .contact-info strong { color: white; }
+  .contact-map { background: #2a2420; aspect-ratio: 4/3; border-radius: var(--radius); display: flex; align-items: center; justify-content: center; color: rgba(255, 255, 255, 0.3); font-size: 0.85rem; }
+
+  .lp-block { background: linear-gradient(135deg, var(--pink) 0%, var(--pink-dark) 100%); color: white; padding: 4rem 3rem; border-radius: var(--radius-lg); margin: 3rem 0 2rem; text-align: center; }
+  .lp-block h3 { font-family: var(--font-serif); font-size: clamp(1.6rem, 4vw, 2.25rem); max-width: 700px; margin: 0 auto 1rem; line-height: 1.15; }
+  .lp-block p { max-width: 560px; margin: 0 auto 2rem; color: rgba(255, 255, 255, 0.9); }
+  .lp-block .btn-primary { background: white; color: var(--pink); }
+  .lp-block .btn-primary:hover { background: var(--pink-soft); }
+
+  footer { padding: 2rem 0; font-size: 0.85rem; color: var(--muted); text-align: center; }
+  footer a { color: var(--pink); }
+</style>
+</head>
+<body>
+
+<div class="preview-banner">
+  Концепт-превью от <a href="https://landingpro.by">LandingPro</a> — как может выглядеть Beauty Family в 2026
+</div>
+
+<nav><div class="container"><div class="row">
+  <div class="logo">Beauty Family</div>
+  <ul class="nav-links">
+    <li><a href="#services">Услуги</a></li>
+    <li><a href="#family">Для семьи</a></li>
+    <li><a href="#masters">Мастера</a></li>
+    <li class="mobile-keep"><a href="#contact" class="nav-btn">Записаться</a></li>
+  </ul>
+</div></div></nav>
+
+<header class="hero"><div class="container">
+  <div class="hero-tag">❀ Семейный салон · с 2019 · ул. Тимошенко 20/1</div>
+  <h1>Красота — это <em>семейная</em> привычка.</h1>
+  <p class="hero-sub">Салон красоты Beauty Family в Минске. Один салон — для всей семьи: стрижки, окрашивание, маникюр, уход. Мастера, которые знают ваших детей по имени.</p>
+  <div class="cta-group">
+    <a href="#contact" class="btn btn-primary">Записаться онлайн</a>
+    <a href="#services" class="btn btn-soft">Посмотреть цены</a>
+  </div>
+</div></header>
+
+<section class="block" id="services"><div class="container">
+  <h2>Всё, что нужно для ухода за собой. <em>И за семьёй.</em></h2>
+  <p class="section-intro">8 мастеров, 20+ услуг, один удобный салон. Цены от 35 BYN — можно совмещать несколько процедур в один визит.</p>
+  <div class="bento">
+    <div class="b-card b-big"><div><div class="b-service">Окрашивание<br>волос</div><div class="b-desc">Колорист-стилист, качественная краска, консультация по уходу. 2–4 часа. Включено: мытьё, укладка, маска.</div></div><div class="b-price"><small>от</small>120 BYN</div></div>
+    <div class="b-card"><div><div class="b-service">Женская стрижка</div><div class="b-desc">Все типы волос</div></div><div class="b-price"><small>от</small>45 BYN</div></div>
+    <div class="b-card b-amber"><div><div class="b-service">Маникюр</div><div class="b-desc">Покрытие гель-лаком</div></div><div class="b-price"><small>от</small>35 BYN</div></div>
+    <div class="b-card"><div><div class="b-service">Педикюр</div><div class="b-desc">Классический, аппаратный</div></div><div class="b-price"><small>от</small>40 BYN</div></div>
+    <div class="b-card b-wide"><div><div class="b-service">Косметология</div><div class="b-desc">Уход за лицом, пилинги, чистка, массаж</div></div><div class="b-price"><small>от</small>80 BYN</div></div>
+    <div class="b-card"><div><div class="b-service">Мужская стрижка</div><div class="b-desc">Классика, fade</div></div><div class="b-price"><small>от</small>30 BYN</div></div>
+    <div class="b-card"><div><div class="b-service">Детская стрижка</div><div class="b-desc">До 10 лет · с игрушкой</div></div><div class="b-price"><small>от</small>25 BYN</div></div>
+  </div>
+</div></section>
+
+<section class="block" id="family"><div class="container">
+  <div class="family">
+    <div>
+      <span style="font-size: 0.85rem; font-weight: 600; color: var(--pink); text-transform: uppercase; letter-spacing: 0.1em;">Семейный абонемент</span>
+      <h3>Экономьте <em>до 25%</em>, если приходите семьёй.</h3>
+      <p>Три процедуры в один визит, семейная карта, детские скидки. Записываетесь через один звонок — мы подбираем время, когда все мастера свободны.</p>
+      <ul class="family-list">
+        <li><div class="family-icon">👩</div><div><strong>Мама</strong><span>Стрижка + окрашивание + маникюр = -15%</span></div></li>
+        <li><div class="family-icon">👨</div><div><strong>Папа</strong><span>Стрижка + борода = -10%</span></div></li>
+        <li><div class="family-icon">👧</div><div><strong>Дети</strong><span>Детская стрижка на 50% дешевле, если вы на процедуре</span></div></li>
+      </ul>
+    </div>
+    <div class="family-img">❀</div>
+  </div>
+</div></section>
+
+<section class="block" id="masters"><div class="container">
+  <h2>Наши <em>мастера.</em></h2>
+  <p class="section-intro">Команда из 8 специалистов. Опыт от 5 до 15 лет. Большинство — работают в Beauty Family с открытия в 2019.</p>
+  <div class="masters">
+    <div class="master"><div class="master-img">А</div><div class="master-name">Анна</div><div class="master-role">Стилист-колорист · 12 лет</div></div>
+    <div class="master"><div class="master-img">М</div><div class="master-name">Марина</div><div class="master-role">Мастер маникюра · 9 лет</div></div>
+    <div class="master"><div class="master-img">Е</div><div class="master-name">Елена</div><div class="master-role">Косметолог · 15 лет</div></div>
+    <div class="master"><div class="master-img">Д</div><div class="master-name">Даниил</div><div class="master-role">Барбер · 7 лет</div></div>
+  </div>
+</div></section>
+
+<section class="block" id="contact"><div class="container">
+  <div class="contact"><div class="contact-grid">
+    <div>
+      <h3>Минск, <em>ул. Тимошенко 20/1.</em></h3>
+      <div class="contact-info">
+        <p><strong>Часы:</strong> Пн–Сб 9:00–21:00 · Вс 10:00–19:00</p>
+        <p><strong>Телефон:</strong> +375 17 356-63-66</p>
+        <p><strong>Instagram:</strong> @beautyfamily.by</p>
+        <p><strong>Email:</strong> info@beautyfamily.by</p>
+        <p><strong>Онлайн-запись:</strong> на сайте или в Instagram direct</p>
+      </div>
+    </div>
+    <div class="contact-map">[ Yandex Карты · ул. Тимошенко 20/1 ]</div>
+  </div></div>
+
+  <div class="lp-block">
+    <h3>Этот концепт вашего салона сделан за 30 минут. Хотите такой на beautyfamily.by?</h3>
+    <p>LandingPro — студия лендингов в Минске. Кастомный дизайн под вашу нишу, онлайн-запись, интеграция с вашей CRM. От 2 недель.</p>
+    <a href="mailto:info@landingpro.by?subject=Интересно: лендинг для Beauty Family" class="btn btn-primary">info@landingpro.by</a>
+  </div>
+</div></section>
+
+<footer><div class="container">
+  Концепт-превью, созданный LandingPro для Beauty Family. Не официальная страница. Реальный Beauty Family: <a href="https://beautyfamily.by">beautyfamily.by</a>
+</div></footer>
+
+</body>
+</html>
