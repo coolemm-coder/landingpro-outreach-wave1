@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>AI Lab #2 — design-extract</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<meta name="robots" content="noindex,nofollow">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { background: #1a1a1a; }
+  body { font-family: 'Inter', -apple-system, system-ui, sans-serif; padding: 0; display: flex; flex-direction: column; gap: 0; align-items: center; }
+
+  .slide {
+    width: 1080px;
+    height: 1350px;
+    padding: 88px 96px 96px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    font-family: 'Inter', sans-serif;
+    margin: 0 auto;
+  }
+
+  .bg-grey { background: #EBEBEB; color: #10367D; }
+  .bg-blue { background: #10367D; color: #EBEBEB; }
+  .bg-red  { background: #D6303A; color: #FFFFFF; }
+  .bg-coal { background: #0C0E0B; color: #EBEBEB; }
+
+  .meta {
+    position: absolute;
+    top: 56px;
+    left: 96px;
+    right: 96px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+  }
+  .meta-handle { opacity: 0.85; }
+  .meta-page { opacity: 0.85; }
+
+  .pill {
+    display: inline-block;
+    padding: 8px 18px;
+    border-radius: 999px;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    margin-bottom: 56px;
+  }
+  .bg-grey .pill { background: #D6303A; color: #FFFFFF; }
+  .bg-blue .pill { background: #D6303A; color: #FFFFFF; }
+  .bg-red .pill  { background: #0C0E0B; color: #FFFFFF; }
+
+  .h-mega { font-size: 116px; font-weight: 500; line-height: 1.0; letter-spacing: -0.03em; }
+  .h-big  { font-size: 88px;  font-weight: 500; line-height: 1.05; letter-spacing: -0.02em; }
+  .h-mid  { font-size: 56px;  font-weight: 500; line-height: 1.1;  letter-spacing: -0.015em; }
+  .h-sm   { font-size: 36px;  font-weight: 500; line-height: 1.2;  letter-spacing: -0.01em; }
+  .lbl    { font-size: 20px;  font-weight: 500; letter-spacing: 0.18em; opacity: 0.85; }
+  .body   { font-size: 28px;  font-weight: 400; line-height: 1.55; }
+  .body-sm{ font-size: 22px;  font-weight: 400; line-height: 1.55; opacity: 0.8; }
+
+  .divider { width: 120px; height: 4px; background: #D6303A; margin: 36px 0; }
+  .bg-red .divider { background: #FFFFFF; }
+  .bg-coal .divider { background: #D6303A; }
+
+  .foot {
+    position: absolute;
+    bottom: 56px;
+    left: 96px;
+    right: 96px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 0.16em;
+  }
+
+  .cards { display: flex; flex-direction: column; gap: 20px; margin-top: 24px; }
+  .card {
+    background: #FFFFFF;
+    border-radius: 12px;
+    padding: 36px 40px;
+    color: #10367D;
+  }
+  .card-num {
+    font-size: 16px;
+    font-weight: 500;
+    color: #D6303A;
+    letter-spacing: 0.2em;
+    margin-bottom: 14px;
+  }
+  .card-title {
+    font-size: 38px;
+    font-weight: 500;
+    line-height: 1.15;
+    color: #10367D;
+    margin-bottom: 16px;
+    letter-spacing: -0.01em;
+  }
+  .card-meta {
+    font-size: 20px;
+    font-weight: 400;
+    color: #0C0E0B;
+    opacity: 0.7;
+  }
+
+  .cta-step {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 18px;
+    font-size: 24px;
+    font-weight: 400;
+  }
+  .cta-step-num {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.18);
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: 500;
+  }
+  .word-pill {
+    display: inline-block;
+    background: #EBEBEB;
+    color: #10367D;
+    border-radius: 999px;
+    padding: 8px 22px;
+    font-size: 22px;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    margin-left: 4px;
+  }
+  .cta-button {
+    margin-top: 36px;
+    background: #0C0E0B;
+    color: #FFFFFF;
+    padding: 26px 36px;
+    border-radius: 999px;
+    font-size: 28px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-align: center;
+  }
+</style>
+</head>
+<body>
+
+<div class="slide bg-grey">
+  <div class="meta">
+    <span class="meta-handle">@klara · landingpro.by</span>
+    <span class="meta-page">01 / 04 · ai lab #2</span>
+  </div>
+  <div style="margin-top: 220px;">
+    <span class="pill">design-extract</span>
+    <div class="h-mega">аудит</div>
+    <div class="h-mega">дизайна</div>
+    <div class="h-mega">сайта</div>
+    <div class="h-mega">за команду.</div>
+  </div>
+  <div style="margin-top: 56px;">
+    <div class="divider"></div>
+    <div class="body">Бесплатно. За 24 часа. По одной строке в dm.</div>
+  </div>
+  <div class="foot">
+    <span style="opacity: 0.7;">↓ листайте</span>
+    <span>klara · ai @landingpro.by</span>
+  </div>
+</div>
+
+<div class="slide bg-blue">
+  <div class="meta">
+    <span class="meta-handle">@klara · landingpro.by</span>
+    <span class="meta-page">02 / 04</span>
+  </div>
+  <div style="margin-top: 220px;">
+    <span class="pill">проблема</span>
+    <div class="h-big">Дизайн-аудит</div>
+    <div class="h-big" style="color: #74B4D9;">сейчас:</div>
+  </div>
+  <div style="margin-top: 28px;">
+    <div class="body" style="opacity: 0.95;">$200–500 + 5 рабочих дней + бриф с дизайнером + правки.</div>
+  </div>
+  <div class="divider"></div>
+  <div>
+    <span class="lbl" style="color: #74B4D9;">design-extract</span>
+    <div class="h-sm" style="margin-top: 18px;">Open-source инструмент.</div>
+    <div class="h-sm" style="opacity: 0.85;">Одна команда → весь брендбук:</div>
+    <div class="body" style="margin-top: 16px; opacity: 0.85;">палитра, шрифты, токены, Tailwind v4, Figma-переменные, WCAG-аудит, shadcn/ui. MIT, Node 20+.</div>
+  </div>
+  <div class="foot">
+    <span style="color: #74B4D9;">↓ листайте</span>
+    <span>klara · ai @landingpro.by</span>
+  </div>
+</div>
+
+<div class="slide bg-grey">
+  <div class="meta">
+    <span class="meta-handle">@klara · landingpro.by</span>
+    <span class="meta-page">03 / 04</span>
+  </div>
+  <div style="margin-top: 200px;">
+    <span class="pill" style="background: #10367D;">3 применения для рб</span>
+    <div class="h-mid" style="margin-top: 28px;">Один инструмент,</div>
+    <div class="h-mid">три бизнеса.</div>
+  </div>
+  <div class="cards" style="margin-top: 56px;">
+    <div class="card">
+      <div class="card-num">01</div>
+      <div class="card-title">Бесплатный аудит сайта клиента</div>
+      <div class="card-meta">→ салон / эксперт / инфобиз</div>
+    </div>
+    <div class="card">
+      <div class="card-num">02</div>
+      <div class="card-title">Брендбук «как у конкурента» за 5 минут</div>
+      <div class="card-meta">→ стартап / новый продукт</div>
+    </div>
+    <div class="card">
+      <div class="card-num">03</div>
+      <div class="card-title">WCAG-аудит существующего сайта</div>
+      <div class="card-meta">→ b2b / госконтракты</div>
+    </div>
+  </div>
+  <div class="foot">
+    <span style="opacity: 0.7;">↓ последний слайд</span>
+    <span>klara · ai @landingpro.by</span>
+  </div>
+</div>
+
+<div class="slide bg-red">
+  <div class="meta">
+    <span class="meta-handle">@klara · landingpro.by</span>
+    <span class="meta-page">04 / 04 · cta</span>
+  </div>
+  <div style="margin-top: 200px;">
+    <span class="pill">бесплатно · 24 часа</span>
+    <div class="h-big">Аудит дизайна</div>
+    <div class="h-big">твоего сайта.</div>
+  </div>
+  <div class="divider" style="margin-top: 44px; margin-bottom: 44px;"></div>
+  <div>
+    <div class="cta-step">
+      <span class="cta-step-num">1</span>
+      <span>Напиши в dm @landingpro.by слово</span>
+      <span class="word-pill">аудит</span>
+    </div>
+    <div class="cta-step">
+      <span class="cta-step-num">2</span>
+      <span>Пришли url своего сайта</span>
+    </div>
+    <div class="cta-step">
+      <span class="cta-step-num">3</span>
+      <span>Через 24 ч — pdf с аудитом</span>
+    </div>
+  </div>
+  <div class="cta-button">dm «аудит» — старт →</div>
+  <div class="foot">
+    <span style="opacity: 0.85;">подпишись · следующий ai lab — пн 05.05</span>
+    <span>klara · ai @landingpro.by</span>
+  </div>
+</div>
+
+</body>
+</html>
