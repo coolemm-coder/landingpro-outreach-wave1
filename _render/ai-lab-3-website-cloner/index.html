@@ -22,10 +22,10 @@
     font-family: 'Inter', sans-serif;
   }
 
-  .bg-grey { background: #EBEBEB; color: #10367D; }
-  .bg-blue { background: #10367D; color: #EBEBEB; }
-  .bg-red  { background: #D6303A; color: #FFFFFF; }
-  .bg-coal { background: #0C0E0B; color: #EBEBEB; }
+  .bg-grey { background: #F4F1EA; color: #123C69; }
+  .bg-blue { background: #123C69; color: #F4F1EA; }
+  .bg-red  { background: #E23D45; color: #FFFFFF; }
+  .bg-coal { background: #101316; color: #F4F1EA; }
 
   .meta {
     position: absolute;
@@ -51,9 +51,9 @@
     letter-spacing: 0.06em;
     margin-bottom: 56px;
   }
-  .bg-grey .pill { background: #D6303A; color: #FFFFFF; }
-  .bg-blue .pill { background: #D6303A; color: #FFFFFF; }
-  .bg-red .pill  { background: #0C0E0B; color: #FFFFFF; }
+  .bg-grey .pill { background: #E23D45; color: #FFFFFF; }
+  .bg-blue .pill { background: #E23D45; color: #FFFFFF; }
+  .bg-red .pill  { background: #101316; color: #FFFFFF; }
 
   .h-mega { font-size: 112px; font-weight: 500; line-height: 1.0; letter-spacing: -0.03em; }
   .h-big  { font-size: 88px;  font-weight: 500; line-height: 1.05; letter-spacing: -0.02em; }
@@ -63,7 +63,7 @@
   .body   { font-size: 28px;  font-weight: 400; line-height: 1.55; }
   .body-sm{ font-size: 22px;  font-weight: 400; line-height: 1.55; opacity: 0.8; }
 
-  .divider { width: 120px; height: 4px; background: #D6303A; margin: 36px 0; }
+  .divider { width: 120px; height: 4px; background: #E23D45; margin: 36px 0; }
   .bg-red .divider { background: #FFFFFF; }
 
   .foot {
@@ -84,12 +84,12 @@
     background: #FFFFFF;
     border-radius: 12px;
     padding: 34px 40px;
-    color: #10367D;
+    color: #123C69;
   }
   .card-num {
     font-size: 16px;
     font-weight: 500;
-    color: #D6303A;
+    color: #E23D45;
     letter-spacing: 0.2em;
     margin-bottom: 14px;
   }
@@ -97,14 +97,14 @@
     font-size: 38px;
     font-weight: 500;
     line-height: 1.15;
-    color: #10367D;
+    color: #123C69;
     margin-bottom: 16px;
     letter-spacing: -0.01em;
   }
   .card-meta {
     font-size: 20px;
     font-weight: 400;
-    color: #0C0E0B;
+    color: #101316;
     opacity: 0.7;
   }
 
@@ -131,8 +131,8 @@
   }
   .word-pill {
     display: inline-block;
-    background: #EBEBEB;
-    color: #10367D;
+    background: #F4F1EA;
+    color: #123C69;
     border-radius: 999px;
     padding: 8px 22px;
     font-size: 22px;
@@ -142,7 +142,7 @@
   }
   .cta-button {
     margin-top: 36px;
-    background: #0C0E0B;
+    background: #101316;
     color: #FFFFFF;
     padding: 26px 36px;
     border-radius: 999px;
@@ -159,39 +159,120 @@
   }
   .cover-visual {
     position: absolute;
-    right: 42px;
-    top: 188px;
-    width: 360px;
-    height: 500px;
+    right: 54px;
+    top: 86px;
+    width: 370px;
+    height: 380px;
     z-index: 1;
   }
   .wire-card {
     position: absolute;
-    width: 220px;
-    height: 292px;
+    width: 196px;
+    height: 264px;
     background: #FFFFFF;
     border: 2px solid rgba(16,54,125,0.22);
     border-radius: 8px;
     box-shadow: 0 30px 70px rgba(12,14,11,0.12);
-    padding: 20px;
+    padding: 16px;
   }
-  .wire-card.source { left: 0; top: 24px; transform: rotate(-7deg); opacity: 0.76; }
-  .wire-card.clone { right: 0; top: 104px; transform: rotate(5deg); border-color: rgba(214,48,58,0.5); }
+  .wire-card.source { left: 0; top: 82px; transform: rotate(-7deg); opacity: 0.62; filter: grayscale(0.55); }
+  .wire-card.clone { right: 0; top: 0; transform: rotate(5deg); border-color: rgba(214,48,58,0.55); }
   .wire-top { display: flex; gap: 8px; margin-bottom: 22px; }
-  .wire-dot { width: 9px; height: 9px; border-radius: 50%; background: #D6303A; opacity: 0.7; }
-  .wire-hero { height: 62px; border-radius: 6px; background: #10367D; margin-bottom: 16px; }
+  .wire-dot { width: 9px; height: 9px; border-radius: 50%; background: #E23D45; opacity: 0.7; }
+  .wire-hero {
+    height: 72px;
+    border-radius: 6px;
+    background: #123C69;
+    margin-bottom: 16px;
+    position: relative;
+    overflow: hidden;
+  }
+  .wire-card.source .wire-hero {
+    background:
+      linear-gradient(135deg, rgba(155,164,179,0.9), rgba(235,235,235,0.95)),
+      repeating-linear-gradient(45deg, rgba(12,14,11,0.08) 0 7px, transparent 7px 15px);
+  }
+  .wire-card.clone .wire-hero {
+    background:
+      radial-gradient(circle at 78% 28%, rgba(255,255,255,0.62) 0 22px, transparent 23px),
+      linear-gradient(135deg, #123C69 0%, #123C69 44%, #E23D45 45%, #E23D45 100%);
+  }
+  .wire-hero::before {
+    content: "";
+    position: absolute;
+    left: 14px;
+    top: 18px;
+    width: 84px;
+    height: 10px;
+    border-radius: 999px;
+    background: rgba(255,255,255,0.85);
+  }
+  .wire-hero::after {
+    content: "";
+    position: absolute;
+    left: 14px;
+    top: 38px;
+    width: 122px;
+    height: 28px;
+    border-radius: 5px;
+    background: rgba(255,255,255,0.2);
+    border: 1px solid rgba(255,255,255,0.32);
+  }
   .wire-line { height: 9px; border-radius: 999px; background: rgba(16,54,125,0.2); margin-bottom: 10px; }
   .wire-line.short { width: 64%; }
   .wire-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 18px; }
-  .wire-tile { height: 46px; border-radius: 6px; background: #EBEBEB; border: 1px solid rgba(16,54,125,0.12); }
+  .wire-tile {
+    height: 36px;
+    border-radius: 6px;
+    background: #F4F1EA;
+    border: 1px solid rgba(16,54,125,0.12);
+    position: relative;
+    overflow: hidden;
+  }
+  .wire-card.clone .wire-tile:nth-child(1) { background: #F6F6F6; }
+  .wire-card.clone .wire-tile:nth-child(2) { background: #FFE8EA; }
+  .wire-card.clone .wire-tile:nth-child(3) { background: #EAF3F8; }
+  .wire-card.clone .wire-tile:nth-child(4) { background: #F6F6F6; }
+  .wire-card.clone .wire-tile::after {
+    content: "";
+    position: absolute;
+    left: 10px;
+    top: 12px;
+    width: 42px;
+    height: 8px;
+    border-radius: 999px;
+    background: rgba(16,54,125,0.22);
+  }
+  .wire-card.clone .wire-tile::before {
+    content: "";
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+    width: 70px;
+    height: 8px;
+    border-radius: 999px;
+    background: rgba(12,14,11,0.09);
+  }
+  .image-chip {
+    position: absolute;
+    right: 18px;
+    bottom: 20px;
+    padding: 7px 10px;
+    border-radius: 999px;
+    background: rgba(255,255,255,0.86);
+    color: #123C69;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+  }
   .clone-arrow {
     position: absolute;
-    left: 124px;
-    top: 216px;
-    width: 116px;
-    height: 48px;
+    left: 104px;
+    top: 182px;
+    width: 112px;
+    height: 42px;
     border-radius: 999px;
-    background: #0C0E0B;
+    background: #101316;
     color: #FFFFFF;
     display: flex;
     align-items: center;
@@ -201,6 +282,32 @@
     letter-spacing: 0.08em;
     box-shadow: 0 20px 44px rgba(12,14,11,0.22);
   }
+  .wire-label {
+    display: none;
+    position: absolute;
+    top: -38px;
+    left: 0;
+    color: #101316;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    opacity: 0.72;
+  }
+  .wire-card.clone .wire-label { color: #E23D45; opacity: 1; }
+  .cover-proof {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 28px;
+    padding: 12px 18px;
+    border-radius: 999px;
+    background: #FFFFFF;
+    color: #101316;
+    font-size: 20px;
+    font-weight: 500;
+    box-shadow: 0 18px 45px rgba(12,14,11,0.08);
+  }
+  .cover-proof span { color: #E23D45; }
 </style>
 </head>
 <body>
@@ -213,8 +320,9 @@
 
   <div class="cover-visual" aria-hidden="true">
     <div class="wire-card source">
+      <div class="wire-label">твой сайт</div>
       <div class="wire-top"><span class="wire-dot"></span><span class="wire-dot"></span><span class="wire-dot"></span></div>
-      <div class="wire-hero"></div>
+      <div class="wire-hero"><span class="image-chip">СЕЙЧАС</span></div>
       <div class="wire-line"></div>
       <div class="wire-line short"></div>
       <div class="wire-grid">
@@ -224,10 +332,11 @@
         <div class="wire-tile"></div>
       </div>
     </div>
-    <div class="clone-arrow">→</div>
+    <div class="clone-arrow">48ч</div>
     <div class="wire-card clone">
+      <div class="wire-label">конкурент</div>
       <div class="wire-top"><span class="wire-dot"></span><span class="wire-dot"></span><span class="wire-dot"></span></div>
-      <div class="wire-hero" style="background:#D6303A;"></div>
+      <div class="wire-hero"><span class="image-chip">MOCKUP</span></div>
       <div class="wire-line"></div>
       <div class="wire-line short"></div>
       <div class="wire-grid">
@@ -241,14 +350,15 @@
 
   <div class="cover-title">
     <span class="pill">website-cloner</span>
-    <div class="h-mega">сайт как у</div>
+    <div class="h-mega">сайт</div>
     <div class="h-mega">конкурента</div>
-    <div class="h-mid" style="margin-top: 18px; color:#D6303A;">за 48 часов.</div>
+    <div class="h-big" style="margin-top: 18px; color:#E23D45;">выглядит дороже?</div>
+    <div class="cover-proof"><span>MOCKUP</span> твоей версии за 48 часов</div>
   </div>
 
-  <div style="margin-top: 44px; position: relative; z-index: 2;">
+  <div style="margin-top: 36px; position: relative; z-index: 2;">
     <div class="divider"></div>
-    <div class="body">Бесплатно. По одной строке в DM.</div>
+    <div class="body">Бесплатно. Пришли URL в DM.</div>
   </div>
 
   <div class="foot">
@@ -266,7 +376,7 @@
   <div style="margin-top: 220px;">
     <span class="pill">проблема</span>
     <div class="h-big">Сайт под клиента</div>
-    <div class="h-big" style="color: #74B4D9;">сейчас:</div>
+    <div class="h-big" style="color: #8EBFD6;">сейчас:</div>
   </div>
 
   <div style="margin-top: 28px;">
@@ -276,14 +386,14 @@
   <div class="divider"></div>
 
   <div>
-    <span class="lbl" style="color: #74B4D9;">AI-WEBSITE-CLONER</span>
+    <span class="lbl" style="color: #8EBFD6;">AI-WEBSITE-CLONER</span>
     <div class="h-sm" style="margin-top: 18px;">Open-source инструмент.</div>
     <div class="h-sm" style="opacity: 0.85;">Одна команда → структура сайта:</div>
     <div class="body" style="margin-top: 16px; opacity: 0.85;">секции, навигация, типографика и дизайн-токены. Дальше — контент под клиента.</div>
   </div>
 
   <div class="foot">
-    <span style="color: #74B4D9;">↓ листайте</span>
+    <span style="color: #8EBFD6;">↓ листайте</span>
     <span>klara · AI @landingpro.by</span>
   </div>
 </div>
@@ -295,7 +405,7 @@
   </div>
 
   <div style="margin-top: 200px;">
-    <span class="pill" style="background: #10367D;">3 применения для РБ</span>
+    <span class="pill" style="background: #123C69;">3 применения для РБ</span>
     <div class="h-mid" style="margin-top: 28px;">Один инструмент,</div>
     <div class="h-mid">три бизнеса.</div>
   </div>
@@ -324,7 +434,7 @@
   </div>
 </div>
 
-<div class="slide bg-red">
+<div class="slide bg-blue">
   <div class="meta">
     <span class="meta-handle">@klara · landingpro.by</span>
     <span class="meta-page">04 / 04 · CTA</span>
