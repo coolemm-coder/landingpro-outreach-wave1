@@ -151,6 +151,56 @@
     letter-spacing: 0.08em;
     text-align: center;
   }
+
+  .cover-title {
+    margin-top: 180px;
+    position: relative;
+    z-index: 2;
+  }
+  .cover-visual {
+    position: absolute;
+    right: 42px;
+    top: 188px;
+    width: 360px;
+    height: 500px;
+    z-index: 1;
+  }
+  .wire-card {
+    position: absolute;
+    width: 220px;
+    height: 292px;
+    background: #FFFFFF;
+    border: 2px solid rgba(16,54,125,0.22);
+    border-radius: 8px;
+    box-shadow: 0 30px 70px rgba(12,14,11,0.12);
+    padding: 20px;
+  }
+  .wire-card.source { left: 0; top: 24px; transform: rotate(-7deg); opacity: 0.76; }
+  .wire-card.clone { right: 0; top: 104px; transform: rotate(5deg); border-color: rgba(214,48,58,0.5); }
+  .wire-top { display: flex; gap: 8px; margin-bottom: 22px; }
+  .wire-dot { width: 9px; height: 9px; border-radius: 50%; background: #D6303A; opacity: 0.7; }
+  .wire-hero { height: 62px; border-radius: 6px; background: #10367D; margin-bottom: 16px; }
+  .wire-line { height: 9px; border-radius: 999px; background: rgba(16,54,125,0.2); margin-bottom: 10px; }
+  .wire-line.short { width: 64%; }
+  .wire-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 18px; }
+  .wire-tile { height: 46px; border-radius: 6px; background: #EBEBEB; border: 1px solid rgba(16,54,125,0.12); }
+  .clone-arrow {
+    position: absolute;
+    left: 124px;
+    top: 216px;
+    width: 116px;
+    height: 48px;
+    border-radius: 999px;
+    background: #0C0E0B;
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    box-shadow: 0 20px 44px rgba(12,14,11,0.22);
+  }
 </style>
 </head>
 <body>
@@ -161,14 +211,42 @@
     <span class="meta-page">01 / 04 · AI Lab #3</span>
   </div>
 
-  <div style="margin-top: 220px;">
-    <span class="pill">website-cloner</span>
-    <div class="h-mega">сайт как у</div>
-    <div class="h-mega">конкурента —</div>
-    <div class="h-mega">за 48 часов.</div>
+  <div class="cover-visual" aria-hidden="true">
+    <div class="wire-card source">
+      <div class="wire-top"><span class="wire-dot"></span><span class="wire-dot"></span><span class="wire-dot"></span></div>
+      <div class="wire-hero"></div>
+      <div class="wire-line"></div>
+      <div class="wire-line short"></div>
+      <div class="wire-grid">
+        <div class="wire-tile"></div>
+        <div class="wire-tile"></div>
+        <div class="wire-tile"></div>
+        <div class="wire-tile"></div>
+      </div>
+    </div>
+    <div class="clone-arrow">→</div>
+    <div class="wire-card clone">
+      <div class="wire-top"><span class="wire-dot"></span><span class="wire-dot"></span><span class="wire-dot"></span></div>
+      <div class="wire-hero" style="background:#D6303A;"></div>
+      <div class="wire-line"></div>
+      <div class="wire-line short"></div>
+      <div class="wire-grid">
+        <div class="wire-tile"></div>
+        <div class="wire-tile"></div>
+        <div class="wire-tile"></div>
+        <div class="wire-tile"></div>
+      </div>
+    </div>
   </div>
 
-  <div style="margin-top: 56px;">
+  <div class="cover-title">
+    <span class="pill">website-cloner</span>
+    <div class="h-mega">сайт как у</div>
+    <div class="h-mega">конкурента</div>
+    <div class="h-mid" style="margin-top: 18px; color:#D6303A;">за 48 часов.</div>
+  </div>
+
+  <div style="margin-top: 44px; position: relative; z-index: 2;">
     <div class="divider"></div>
     <div class="body">Бесплатно. По одной строке в DM.</div>
   </div>
